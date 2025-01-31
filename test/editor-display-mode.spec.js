@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import EditorDisplayMode from "../internal/utils/editor-display-mode.js";
+import EditorDisplayMode from "../src/internal/utils/editor-display-mode.js";
 
 describe('EditorDisplayMode test suite ', function () {
 

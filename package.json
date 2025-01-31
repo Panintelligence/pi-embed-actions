@@ -2,16 +2,18 @@
   "name": "pi-embed-actions",
   "version": "1.0.0",
   "description": "TBC",
-  "main": "main.js",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "esbuild src/main.js --bundle --minify --outfile=dist/pi-embed-actions-v1.0.0.min.js"
   },
   "keywords": [],
   "author": "Panintelligence",
   "license": "ISC",
   "devDependencies": {
     "chai": "^5.1.2",
+    "esbuild": "^0.24.2",
     "mocha": "^11.1.0"
   }
 }

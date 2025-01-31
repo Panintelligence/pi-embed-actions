@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import EmbedUtils from "../internal/utils/embed-utils.js";
+import EmbedUtils from "../src/internal/utils/embed-utils.js";
 
 describe('EmbedUtils test suite ', function () {
 
