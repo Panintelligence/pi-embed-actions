@@ -40,7 +40,7 @@ jobs:
       - name: Minify and Bundle the library
         run: npm run build
       - name: Upload minified version as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: pi-embed-actions-v1.0.0.min
           path: dist/pi-embed-actions-v1.0.0.min.js
