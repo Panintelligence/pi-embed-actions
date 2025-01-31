@@ -1,0 +1,17 @@
+{
+  "name": "pi-embed-actions",
+  "version": "1.0.0",
+  "description": "TBC",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Panintelligence",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.1.0"
+  }
+}
