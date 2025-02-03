@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "build": "esbuild src/main.js --bundle --minify --outfile=dist/pi-embed-actions-v1.0.0.min.js",
+    "build": "esbuild src/main.js --bundle --minify --keep-names --outfile=dist/pi-embed-actions-v1.0.0.min.js",
     "generate-docs": "jsdoc --configure jsdoc.json --verbose"
   },
   "keywords": [],

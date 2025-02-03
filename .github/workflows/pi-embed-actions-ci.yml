@@ -42,7 +42,7 @@ jobs:
       - name: Upload minified version as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pi-embed-actions-v1.0.0.min
+          name: pi-embed-actions-build
           path: dist/pi-embed-actions-v1.0.0.min.js
 
   generate-docs:
@@ -61,5 +61,5 @@ jobs:
           - name: Upload generated docs as artifacts (optional)
             uses: actions/upload-artifact@v4
             with:
-              name: generated-docs
+              name: pi-embed-actions-docs
               path: docs/
