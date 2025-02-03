@@ -59,7 +59,7 @@ embedUtils.onIframeLoadComplete = (loadCompleteMessage, hasLoaded, iframe, callb
  * @param {function} callbackFn - The function to be executed after the iframe has finished loading or immediately if already loaded.
  * @param {function} assignInitialStateFn - The function to execute when the iframe load is complete that sets `hasLoaded` to true.
  *
- * @example
+ * @example sthhdjksjfhd
  */
 embedUtils.runInIframe = (hasLoaded, iframe, url, callbackFn, assignInitialStateFn) => {
     if (hasLoaded) {

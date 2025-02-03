@@ -45,3 +45,21 @@ jobs:
           name: pi-embed-actions-v1.0.0.min
           path: dist/pi-embed-actions-v1.0.0.min.js
 
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+          - name: Check out the code
+            uses: actions/checkout@v2
+          - name: Set up Node.js
+            uses: actions/setup-node@v2
+            with:
+                node-version: '18'
+          - name: Install dependencies
+            run: npm install
+          - name: Generate JSDoc
+            run: npm run generate-docs
+          - name: Upload generated docs as artifacts (optional)
+            uses: actions/upload-artifact@v4
+            with:
+              name: generated-docs
+              path: docs/index.html

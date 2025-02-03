@@ -1,5 +1,9 @@
 import embedUtils from "./utils/embed-utils.js";
 
+/**
+ * @class ReportEditor
+ * @description Functional area for interacting with the report editor in the embedded dashboard.
+ */
 export class ReportEditor {
     iframe = null;
     dashboardUrl = null;
