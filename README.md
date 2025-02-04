@@ -1,44 +1,48 @@
 ![Logo Image](./static/logo.png)
 
-## Pi Embed Actions
+# Introduction
 
 -----------------
 
-`pi-embed-actions` is a lightweight JavaScript library designed to simplify interactions between your application and the Pi app embedded within an iframe. It offers a straightforward API to execute actions directly within the embedded Pi app, reducing the need for manual input and simplifying the integration of 
-Pi into your app.
+`pi-embed-actions` is a lightweight JavaScript library that streamlines communication between your application and the pi dashboard embedded within an iframe. It provides a simple and intuitive API to execute actions directly inside the embedded pi dashboard, minimising manual effort and making it easier to integrate pi into your application.
 
-The library acts as a wrapper to facilitate various actions, such as opening a report editor, with plans to introduce additional actions in the future to further automate tasks and enhance the API’s capabilities.
-<br>
-<br>
+Future updates aim to expand functionality by introducing additional actions, further automating tasks and enhancing the library's capabilities.
 
-### Installation
+# Installation
 
 -----------------
 
-#### Prerequisites
+Currently, `pi-embed-actions` is available only as a minified JavaScript file, which can be downloaded as an artifact from the [GitHub Releases](https://github.com/Panintelligence/pi-embed-actions/releases) page.
 
-> **Note:** You must have npm installed on your machine.
+To use the library:
 
-You can verify this by running the following commands in your terminal:
+1. Go to the [GitHub Releases](https://github.com/Panintelligence/pi-embed-actions/releases).
+2. Download the latest version of `pi-embed-actions.min.js`.
+3. Add the downloaded file to your project and reference it in your code:
+   ```html
+   <script src="path/to/pi-embed-actions.min.js"></script>
+   ```
 
-```shell
- npm -v
-```
+We plan to introduce additional file formats (e.g., modular versions) in future updates to accommodate a wider range of use cases.
 
-#### Install pi-embed-actions
-
-```shell
- npm install pi-embed-actions --save-dev
-```
-
-
-
-### Example Usage:
+# Documentation
 
 -----------------
+
+Please refer to the documentation at https://docx.js.org/ for details on how to use this library.
+
+# Examples
+
+-----------------
+
+### Basic Usage:
 
 ```shell
  const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
  dashboard.reportEditor.open(2);
 ```
+
+### Further examples:
+
+Check our [api-embed-example project](https://github.com/Panintelligence/api-embed-example/tree/main/static_examples) for examples.
 

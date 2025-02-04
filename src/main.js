@@ -1,4 +1,4 @@
-import PiEmbedActions from './pi-embed-actions.js';
+import {PiEmbedActions} from './pi-embed-actions.js';
 
 if (typeof window !== 'undefined') {
     window.PiEmbedActions = PiEmbedActions;

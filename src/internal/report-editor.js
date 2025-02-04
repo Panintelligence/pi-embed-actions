@@ -1,9 +1,5 @@
 import embedUtils from "./utils/embed-utils.js";
 
-/**
- * @class ReportEditor
- * @description Functional area for interacting with the report editor in the embedded dashboard.
- */
 export class ReportEditor {
     iframe = null;
     dashboardUrl = null;
@@ -18,18 +14,6 @@ export class ReportEditor {
     open(hasLoaded, itemId) {
         this.runInIframe(hasLoaded, () => {
             embedUtils.sendMessage(this.iframe, 'open-report-editor', itemId, this.dashboardUrl);
-        });
-    }
-
-    close(hasLoaded, itemId) {
-        this.runInIframe(hasLoaded, () => {
-            embedUtils.sendMessage(this.iframe, 'close-report-editor', itemId, this.dashboardUrl);
-        });
-    }
-
-    closeAll(hasLoaded) {
-        this.runInIframe(hasLoaded, () => {
-            embedUtils.sendMessage(this.iframe, 'close-report-editors', null, this.dashboardUrl);
         });
     }
 
