@@ -1,4 +1,4 @@
-import EditorDisplayMode from "./editor-display-mode.js";
+import {EditorDisplayMode} from "./editor-display-mode.js";
 
 const embedUtils = {};
 

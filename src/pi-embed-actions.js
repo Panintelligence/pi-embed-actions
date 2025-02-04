@@ -1,23 +1,12 @@
 import {ReportEditor} from "./internal/report-editor.js";
-import {DataSourceItemEditor} from "./internal/data-source-item-editor.js";
 import embedUtils from "./internal/utils/embed-utils.js";
 
-/**
- * Users need to create one instance of this class per iframe.
- */
 export default class PiEmbedActions {
     iframe = null;
     iframeId = null;
     dashboardUrl = null; // e.g. https://pi-dev.uk:8224/pi?lang=en_GB&token=xxx&editorDisplayMode=CONTENT
 
-    /**
-     * @type {ReportEditor}
-     */
     internalReportEditor = null;
-    /**
-     * @type {DataSourceItemEditor}
-     */
-    internalDataSourceItemEditor = null;
 
     hasLoaded = false;
     assignInitialStateFn = () => {
@@ -36,9 +25,6 @@ export default class PiEmbedActions {
      *     - `token` (optional): A secure token for authentication or access control.
      *     - `locale`: Specifies the language and regional settings for the dashboard (e.g., `lang=en_GB`).
      *     - `editorDisplayMode`: Specifies whether the dashboard should only display the requested content or show in full (default). To display content only, use `editorDisplayMode=CONTENT`.
-
-
-
      * @returns {PiEmbedActions} - An instance of PiEmbedActions object.
      *
      * @example
@@ -60,8 +46,6 @@ export default class PiEmbedActions {
         this.iframeId = iframeId;
         this.dashboardUrl = dashboardUrl;
         this.internalReportEditor = new ReportEditor(iframe, dashboardUrl, this.assignInitialStateFn);
-        this.internalDataSourceItemEditor = new DataSourceItemEditor(iframe, dashboardUrl, this.assignInitialStateFn);
-
         this.hasLoaded = !!this.iframe.src; // if src attribute already exists that means the iframe has already been loaded before initialising this library
     };
 
@@ -74,7 +58,7 @@ export default class PiEmbedActions {
         /**
          * @memberof PiEmbedActions.reportEditor
          * @description Opens the report editor panel with the given itemId by sending a post message to the embedded iframe.
-         * @param {number} itemId - The ID of the item (e.g., reportId) to load into the editor.
+         * @param {number} itemId - The id of the report to be opened in the editor
          * @example
          * const itemId = 42;
          * dashboard.reportEditor.open(itemId);
@@ -82,17 +66,5 @@ export default class PiEmbedActions {
         open: (itemId) => {
             this.internalReportEditor.open(this.hasLoaded, itemId);
         },
-        close: (itemId) => {
-            this.internalReportEditor.close(this.hasLoaded, itemId);
-        },
-        closeAll: () => {
-            this.internalReportEditor.closeAll(this.hasLoaded);
-        }
-    };
-
-    dataSourceItemEditor = {
-        open: (itemId) => {
-            this.internalDataSourceItemEditor.open(this.hasLoaded, itemId);
-        }
     };
 }
