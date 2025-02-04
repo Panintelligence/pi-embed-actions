@@ -1,7 +1,7 @@
 {
   "name": "pi-embed-actions",
   "version": "1.0.0",
-  "description": "TBC",
+  "description": "pi-embed-actions is a lightweight JavaScript library designed to simplify interactions between your application and the Pi app embedded within an iframe.",
   "main": "src/main.js",
   "type": "module",
   "scripts": {

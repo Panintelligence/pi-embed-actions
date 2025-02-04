@@ -19,7 +19,8 @@
       ],
       "default_theme": "fallback-light",
       "title": "pi-embed-actions",
-      "homepageTitle": "Pi Embed Actions Library",
+      "homepageTitle": "Pi Embed Actions",
+      "favicon": "./static/favicon.ico",
       "menu": [
         {
           "title": "Github",
@@ -34,7 +35,8 @@
         "include": [
           "./static"
         ]
-      }
+      },
+      "outputSourceFiles": false
     }
   },
   "markdown": {
