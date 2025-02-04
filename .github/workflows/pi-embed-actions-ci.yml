@@ -56,8 +56,6 @@ jobs:
           node-version: '18'
       - name: Install dependencies
         run: npm install
-      - name: Remove existing docs
-        run: rm -rf docs
       - name: Generate new docs
         run: npm run generate-docs
       - name: Upload generated docs as artifacts (optional)

@@ -35,7 +35,7 @@ export class PiEmbedActions {
      *
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
      * - **`token`** (optional): Secure access token for authentication.
-     * - **`editorDisplayMode`** (optional): Determines display behavior for the editor. See {@link EditorDisplayMode} for more details.
+     * - **`editorDisplayMode`** (optional): Determines display behavior for the editor (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
      * @returns {PiEmbedActions} A `PiEmbedActions` instance that is used to interact with the embed.
      *
      * @example
