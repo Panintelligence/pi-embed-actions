@@ -29,7 +29,7 @@ We plan to introduce additional file formats (e.g., modular versions) in future 
 
 -----------------
 
-Please refer to the documentation at https://docx.js.org/ for details on how to use this library.
+Please refer to our [documentation](https://panintelligence.github.io/pi-embed-actions/) for details on how to use this library.
 
 # Examples
 
