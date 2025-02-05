@@ -57,7 +57,7 @@ export class PiEmbedActions {
         this.iframeId = iframeId;
         this.dashboardUrl = dashboardUrl;
         this.internalReportEditor = new ReportEditor(iframe, dashboardUrl, this.assignInitialStateFn);
-        this.hasLoaded = !!this.iframe.src;
+        // this.hasLoaded = !!this.iframe.src;
     }
 
     /**
