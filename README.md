@@ -26,7 +26,6 @@ We plan to introduce additional file formats (e.g., modular versions) in future 
 Please refer to our [documentation](https://panintelligence.github.io/pi-embed-actions/) for details on how to use this library.
 
 ## Examples
-<br>
 
 ### Basic Usage:
 ```shell
