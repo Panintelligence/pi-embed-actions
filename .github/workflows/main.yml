@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Shared Node.js Setup
-        uses: ./.github/workflows/shared-setup.yml
+        uses: ./.github/workflows/shared-setup.yml@2778_open_report_editor
       - name: Run js tests
         run: npm test
 
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Shared Node.js Setup
-        uses: ./.github/workflows/shared-setup.yml
+        uses: ./.github/workflows/shared-setup.yml@2778_open_report_editor
       - name: Minify and Bundle the library
         run: npm run build
       - name: Upload minified version as artifact
@@ -41,7 +41,7 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v2
       - name: Shared Node.js Setup
-        uses: ./.github/workflows/shared-setup.yml
+        uses: ./.github/workflows/shared-setup.yml@2778_open_report_editor
       - name: Generate new docs
         run: npm run generate-docs
       - name: Upload generated docs as artifacts
