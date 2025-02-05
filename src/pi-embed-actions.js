@@ -35,8 +35,8 @@ export class PiEmbedActions {
      *
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
      * - **`token`** (optional): Secure access token for authentication.
-     * - **`editorDisplayMode`** (optional): Determines display behavior for the editor (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
-     * @returns {PiEmbedActions} A `PiEmbedActions` instance that is used to interact with the embed.
+     * - **`editorDisplayMode`** (optional): Editor display mode (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
+     * @returns {PiEmbedActions} `PiEmbedActions` instance that is used to interact with the embedded dashboard.
      *
      * @example
      * const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
