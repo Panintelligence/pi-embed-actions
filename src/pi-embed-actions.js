@@ -2,7 +2,7 @@ import {ReportEditor} from "./internal/report-editor.js";
 import embedUtils from "./internal/utils/embed-utils.js";
 
 /**
- * Main class for interacting with embedded pi dashboard.
+ * Main class for interacting with the embedded pi dashboard.
  * `PiEmbedActions` serves as the primary entry point for performing various actions within the embedded dashboard. It provides methods to interact with different
  * functional areas of the dashboard (e.g., report editor), enabling seamless control and dynamic interaction.
  * This class can be instantiated by using `createDashboard()` method.
@@ -23,8 +23,8 @@ export class PiEmbedActions {
     };
 
     /**
-     * Initialises a `PiEmbedActions` instance for embedding a dashboard.
-     * This method sets up the required configuration for interacting with the embedded dashboard, including its functional areas and features, without automatically starting it.
+     * Initialises the setup for a dashboard instance without starting it.
+     * This method sets up the required configuration for interacting with the embedded dashboard, including its functional areas and features.
      * @static
      * @function
      * @name createDashboard
@@ -36,7 +36,7 @@ export class PiEmbedActions {
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
      * - **`token`** (optional): Secure access token for authentication.
      * - **`editorDisplayMode`** (optional): Editor display mode (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
-     * @returns {PiEmbedActions} `PiEmbedActions` instance that is used to interact with the embedded dashboard.
+     * @returns {PiEmbedActions}
      *
      * @example
      * const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
@@ -57,7 +57,6 @@ export class PiEmbedActions {
         this.iframeId = iframeId;
         this.dashboardUrl = dashboardUrl;
         this.internalReportEditor = new ReportEditor(iframe, dashboardUrl, this.assignInitialStateFn);
-        // this.hasLoaded = !!this.iframe.src;
     }
 
     /**

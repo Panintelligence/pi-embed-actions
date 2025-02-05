@@ -49,17 +49,14 @@ embedUtils.onIframeLoadComplete = (loadCompleteMessage, hasLoaded, iframe, callb
 };
 
 /**
- * Runs the provided callback function in the iframe once it has finished loading, and optionally assigns initial state.
  * This method first checks if the iframe has already loaded. If the iframe has loaded, it immediately executes the callback function.
  * If the iframe hasn't loaded, it sets the `src` attribute of the iframe to the provided URL and waits for the `dashboard-load-complete` message from the iframe.
  * Once the message is received, it calls the `assignInitialStateFn` function to set the initial state and then executes the callback function.
- * @param {boolean} hasLoaded -  A flag indicating whether the dashboard has already been loaded.
+ * @param {boolean} hasLoaded -  A flag indicating whether the dashboard (angular app) has already been loaded.
  * @param iframe - Active iframe
  * @param {string} url - The dashboard URL to load in the iframe if it hasn't been loaded yet.
  * @param {function} callbackFn - The function to be executed after the iframe has finished loading or immediately if already loaded.
  * @param {function} assignInitialStateFn - The function to execute when the iframe load is complete that sets `hasLoaded` to true.
- *
- * @example sthhdjksjfhd
  */
 embedUtils.runInIframe = (hasLoaded, iframe, url, callbackFn, assignInitialStateFn) => {
     if (hasLoaded) {
