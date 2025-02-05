@@ -9,34 +9,29 @@ on:
       - '**'
 
 jobs:
+  setup-and-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
   test:
     runs-on: ubuntu-latest
+    needs: setup-and-install
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm install
       - name: Run js tests
         run: npm test
-
   build:
     runs-on: ubuntu-latest
-    needs: test
-    # if: github.ref == 'refs/heads/main'
-
+    needs:
+      - setup-and-install
+      - test
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm install
       - name: Minify and Bundle the library
         run: npm run build
       - name: Upload minified version as artifact
@@ -44,18 +39,10 @@ jobs:
         with:
           name: pi-embed-actions-build
           path: dist/pi-embed-actions-v1.0.0.min.js
-
   generate-docs:
     runs-on: ubuntu-latest
+    needs: setup-and-install
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm install
       - name: Generate JSDoc
         run: npm run generate-docs
       - name: Upload generated docs as artifacts
