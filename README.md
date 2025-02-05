@@ -20,7 +20,6 @@ To use the library:
 3. Add the downloaded file to your project and reference it in your code:
 
 ```html
-
 <script src="path/to/pi-embed-actions.min.js"></script>
 ```
 
