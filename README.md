@@ -12,14 +12,12 @@ Currently, `pi-embed-actions` is available only as a minified JavaScript file, w
 To use the library:
 
 1. Go to the [GitHub Releases](https://github.com/Panintelligence/pi-embed-actions/releases).
-2. Download the latest version of `pi-embed-actions.min.js`.
-3. Add the downloaded file to your project and reference it in your code:
+2. Download the latest minified version of `pi-embed-actions` library.
+3. Add the downloaded file to your project and reference it in your code. E.g.,
 
 ```html
-<script src="path/to/pi-embed-actions.min.js"></script>
+<script src="path/to/pi-embed-actions-v1.0.0.min.js"></script>
 ```
-
-We plan to introduce additional file formats (e.g., modular versions) in future updates to accommodate a wider range of use cases.
 
 ## Documentation
 
