@@ -47,8 +47,8 @@ export class PiEmbedActions {
     }
 
     constructor(iframeId, dashboardUrl) {
-        if (!iframeId) throw new Error('iframeId is required to initialise the embed actions.');
-        if (!dashboardUrl) throw new Error('dashboardUrl is required to initialise the embed actions.');
+        if (!iframeId) throw new Error('iframeId is required to initialise the dashboard.');
+        if (!dashboardUrl) throw new Error('dashboardUrl is required to initialise the dashboard.');
         if (!embedUtils.validateUrl(dashboardUrl)) throw new Error(`Invalid dashboard url: ${dashboardUrl}. Please consult the documentation for the expected URL structure.`);
         const iframe = document.getElementById(iframeId);
         if (!iframe) throw new Error(`Iframe with id "${iframeId}" not found.`);
