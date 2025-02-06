@@ -1,7 +1,11 @@
 /**
- * `EditorDisplayMode` allows you to control what aspects of the editor are displayed when the dashboard is embedded.
- * By default, the editor displays a full view that matches the non-embedded dashboard UI.
- * By using specific `EditorDisplayMode` values as query parameters, you can customise what view is used for the embedded editor.
+ * `EditorDisplayMode` allows to control what aspects of the editor are displayed when the dashboard is embedded.
+ *
+ * The editor is the interface within the dashboard that enables modification of various elements.
+ * It provides options to customise and manage key components in the dashboard, such as reports, users, categories and more.
+ *
+ * Specific `EditorDisplayMode` values can be applied as query parameters to customise the view of the embedded editor.
+ * By default, the editor displays a full view identical to the non-embedded dashboard UI.
  */
 export class EditorDisplayMode {
     constructor(props) {
@@ -11,17 +15,17 @@ export class EditorDisplayMode {
     static SHOW_ALL = new EditorDisplayMode({name: 'SHOW_ALL'});
     /**
      * Static property representing the `CONTENT` display mode.
-     * This mode simplifies the editor interface by removing non-essential elements and adjusting the layout.
-     * It focuses solely on the content of a single report editor by making the following adjustments:
-     * - Hides the reports list, scheduler module-related content, import-export functionality.
-     * - Cleans up the interface by hiding unnecessary toolbars and buttons.
+     * This mode simplifies the editor interface by adjusting the layout and removing non-essential elements like toolbars and buttons.
+     * Only the requested editor's content is displayed in this mode.
      *
-     * In this mode, only the content of the requested report editor is displayed. Example:
+     * Example of the embedded Report Editor in 'CONTENT' mode:
+     *
      * <img src="static/content-editor-display-mode.png" alt="Example Output" />
      *
      *  @example
-     *  // To apply 'CONTENT' mode, include it as a query parameter to your dashboard URL:
+     * // To apply 'CONTENT' mode, add it as a query parameter in the dashboard URL:
      *  https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT
+     * // If no query parameter is supplied, the default editor view will be displayed.
      */
     static CONTENT = new EditorDisplayMode({name: 'CONTENT'});
 

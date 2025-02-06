@@ -23,24 +23,36 @@ export class PiEmbedActions {
     };
 
     /**
-     * Initialises the setup for a dashboard instance without starting it.
-     * This method sets up the required configuration for interacting with the embedded dashboard, including its functional areas and features.
+     * Creates an instance of `PiEmbedActions` class.
+     * This method does not load an instance of the dashboard, it validates and sets the required configuration for the embedded dashboard including its functional areas and features.
      * @static
      * @function
      * @name createDashboard
      * @memberof PiEmbedActions
      * @param {string} iframeId - The unique identifier for the iframe in which the dashboard is embedded.
-     * @param {string} dashboardUrl - The URL for the dashboard. `dashboardUrl` should include all necessary query parameters to avoid triggering browsers reloads when navigating between different functional areas in the dashboard.
-     * Most common query parameters:
+     * @param {string} dashboardUrl - The URL for the dashboard.
+     * ```text
+     *    https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT
+     *    |____| |_______|  |__|   |__________________________________|
+     *      |        |       |                       |
+     *   Protocol  Host    Port    List of query parameters in key-value format,
+     *                                          separated by `&`
+     * ```
+     * `dashboardUrl` should include all necessary query parameters to avoid triggering browsers reloads when navigating between different functional areas in the dashboard.
+     * Most common query parameters (optional):
      *
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
-     * - **`token`** (optional): Secure access token for authentication.
-     * - **`editorDisplayMode`** (optional): Editor display mode (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
+     * - **`token`**: Secure access token for authentication (e.g., `token=xxx`).
+     * - **`editorDisplayMode`**: Editor display mode (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
+     *
      * @returns {PiEmbedActions}
      *
      * @example
+     * // Basic example of how to create a dashboard instance and embed a Report Editor:
+     * // 1. Create a dashboard instance, providing a valid iframeId and dashboardUrl.
      * const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
-     * dashboard.reportEditor.open(2); // Open report editor for item with ID 2.
+     * // 2. Open a specific report in the editor, providing a valid report id.
+     * dashboard.reportEditor.open(2);
      */
     static createDashboard(iframeId, dashboardUrl) {
         return new PiEmbedActions(iframeId, dashboardUrl);
@@ -67,11 +79,21 @@ export class PiEmbedActions {
     reportEditor = {
         /**
          * Opens the Report Editor panel for a specific report by sending a post message to the embedded iframe to open the Report Editor UI for the given `itemId`.
+         *
+         * To use `open()` method, `PiEmbedActions` needs to be initiated, refer to {@link PiEmbedActions} for further information or check the code examples listed below.
+         *
+         * Note: The first time this method is called on `PiEmbedActions` it will load a dashboard. Any subsequent calls to `open()` will not trigger a dashboard reload.
          * @function
          * @memberof PiEmbedActions.reportEditor
          * @param {number} itemId - The ID of the report to open in the editor.
+         *
+         * @see {@link https://github.com/Panintelligence/api-embed-example/blob/main/static_examples/embed_report_editor.html | Full Code Example}
          * @example
-         * dashboard.reportEditor.open(2); // Opens the Report Editor for report ID 2.
+         * // 1. Create a dashboard instance, providing a valid iframeId and dashboardUrl.
+         * // dashboardUrl must include a valid host, port, and query parameters.
+         * const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
+         * // 2. Open a specific report in the editor, providing a valid report id.
+         * dashboard.reportEditor.open(2);
          */
         open: (itemId) => {
             this.internalReportEditor.open(this.hasLoaded, itemId);

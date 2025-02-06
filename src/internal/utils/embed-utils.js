@@ -33,7 +33,7 @@ embedUtils.validateUrl = (dashboardUrl) => {
  * Sets up a listener for load complete messages from the iframe and triggers a callback when the message is received.
  * @param {string} loadCompleteMessage - The type of message indicating the dashboard has loaded.
  * @param {boolean} hasLoaded - Determines whether the dashboard has already loaded. If false, the callback is executed.
- * @param iframe - Active iframe
+ * @param {HTMLElement} iframe - Active iframe
  * @param {function} callbackFn - A function to execute when the load complete message is received
  */
 embedUtils.onIframeLoadComplete = (loadCompleteMessage, hasLoaded, iframe, callbackFn) => {
@@ -53,7 +53,7 @@ embedUtils.onIframeLoadComplete = (loadCompleteMessage, hasLoaded, iframe, callb
  * If the iframe is already loaded, the callback is executed immediately. Otherwise, the dashboard is loaded using the specified URL, and it waits for the `dashboard-load-complete` message.
  * Once the message is received, assignInitialStateFn is called to set `hasLoaded` to `true` before executing the callback.
  * @param {boolean} hasLoaded -  Indicates whether the dashboard (angular app) has already been loaded.
- * @param iframe - Active iframe
+ * @param {HTMLElement} iframe - Active iframe
  * @param {string} url - The URL of the dashboard to load in the iframe if not already loaded.
  * @param {function} callbackFn - Function to execute either immediately (if loaded) or after the iframe finishes loading.
  * @param {function} assignInitialStateFn - Function to update the initial state and mark that the iframe has loaded.
