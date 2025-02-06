@@ -17,7 +17,7 @@ export class EditorDisplayMode {
      * - Cleans up the interface by hiding unnecessary toolbars and buttons.
      *
      * In this mode, only the content of the requested report editor is displayed. Example:
-     * <img src="/static/content-editor-display-mode.png" alt="Example Output" />
+     * <img src="static/content-editor-display-mode.png" alt="Example Output" />
      *
      *  @example
      *  // To apply 'CONTENT' mode, include it as a query parameter to your dashboard URL:
