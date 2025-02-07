@@ -38,12 +38,12 @@ export class PiEmbedActions {
      *   Protocol  Host    Port    List of query parameters in key-value format,
      *                                          separated by `&`
      * ```
-     * `dashboardUrl` should include all necessary query parameters to avoid triggering browsers reloads when navigating between different functional areas in the dashboard.
+     * `dashboardUrl` should include all necessary query parameters to prevent browser reloads when navigating between different functional areas in the dashboard.
      * Most common query parameters (optional):
      *
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
      * - **`token`**: Secure access token for authentication (e.g., `token=xxx`).
-     * - **`editorDisplayMode`**: Editor display mode (e.g., editorDisplayMode=CONTENT). See {@link EditorDisplayMode} for more details.
+     * - **`editorDisplayMode`**: Editor display mode (e.g., `editorDisplayMode=CONTENT`). See {@link EditorDisplayMode} for more details.
      *
      * @returns {PiEmbedActions}
      *
@@ -82,7 +82,7 @@ export class PiEmbedActions {
          *
          * To use `open()` method, `PiEmbedActions` needs to be initiated, refer to {@link PiEmbedActions} for further information or check the code examples listed below.
          *
-         * Note: The first time this method is called on `PiEmbedActions` it will load a dashboard. Any subsequent calls to `open()` will not trigger a dashboard reload.
+         * Note: The initial call to this method on `PiEmbedActions` will load the dashboard, while any subsequent calls to `open()` will avoid reloading the dashboard.
          * @function
          * @memberof PiEmbedActions.reportEditor
          * @param {number} itemId - The ID of the report to open in the editor.

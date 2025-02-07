@@ -26,7 +26,7 @@ Please refer to our [documentation](https://panintelligence.github.io/pi-embed-a
 ## Examples
 
 ### Basic Usage Examples:
-To embed the Report Editor:
+To embed a Report Editor:
 ```javascript
 const dashboard = PiEmbedActions.createDashboard('iframeId', 'https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT');
 dashboard.reportEditor.open(2);
