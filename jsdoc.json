@@ -1,0 +1,50 @@
+{
+  "source": {
+    "include": [
+      "src/pi-embed-actions.js",
+      "src/internal/utils/editor-display-mode.js"
+    ],
+    "includePattern": ".js$"
+  },
+  "opts": {
+    "destination": "./docs",
+    "encoding": "utf8",
+    "recurse": true,
+    "homepage": "main.js",
+    "verbose": true,
+    "readme": "README.md",
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "static_dir": [
+        "./static"
+      ],
+      "default_theme": "fallback-light",
+      "title": "pi-embed-actions",
+      "homepageTitle": "Pi Embed Actions",
+      "favicon": "./static/favicon.ico",
+      "menu": [
+        {
+          "title": "Github",
+          "link": "https://github.com/Panintelligence/pi-embed-actions"
+        }
+      ]
+    }
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "default": {
+      "staticFiles": {
+        "include": [
+          "./static"
+        ]
+      },
+      "outputSourceFiles": false
+    }
+  },
+  "markdown": {
+    "hardwrap": false,
+    "idInHeadings": true
+  }
+}
