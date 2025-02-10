@@ -1,7 +1,8 @@
 {
   "source": {
     "include": [
-      "src/pi-embed-actions.js"
+      "src/pi-embed-actions.js",
+      "src/internal/utils/editor-display-mode.js"
     ],
     "includePattern": ".js$"
   },
@@ -29,6 +30,9 @@
       ]
     }
   },
+  "plugins": [
+    "plugins/markdown"
+  ],
   "templates": {
     "default": {
       "staticFiles": {
