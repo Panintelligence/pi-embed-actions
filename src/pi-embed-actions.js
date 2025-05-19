@@ -33,7 +33,7 @@ export class PiEmbedActions {
      * @param {string} dashboardUrl - The URL for the dashboard.
      * ```text
      *    https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT&cookieName=Test
-     *    |____| |_______|  |__|   |__________________________________|
+     *    |____| |_______|  |__|   |___________________________________________________|
      *      |        |       |                       |
      *   Protocol  Host    Port    List of query parameters in key-value format,
      *                                          separated by `&`
