@@ -32,8 +32,8 @@ export class PiEmbedActions {
      * @param {string} iframeId - The unique identifier for the iframe in which the dashboard is embedded.
      * @param {string} dashboardUrl - The URL for the dashboard.
      * ```text
-     *    https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT
-     *    |____| |_______|  |__|   |__________________________________|
+     *    https://pi-dev.uk:8224/pi?lang=en_GB&editorDisplayMode=CONTENT&cookieName=Test
+     *    |____| |_______|  |__|   |___________________________________________________|
      *      |        |       |                       |
      *   Protocol  Host    Port    List of query parameters in key-value format,
      *                                          separated by `&`
@@ -44,6 +44,7 @@ export class PiEmbedActions {
      * - **`locale`**: Dashboard language and regional settings (e.g., `lang=en_GB`).
      * - **`token`**: Secure access token for authentication (e.g., `token=xxx`).
      * - **`editorDisplayMode`**: Editor display mode (e.g., `editorDisplayMode=CONTENT`). See {@link EditorDisplayMode} for more details.
+     * - **`cookieName`**: Dynamic cookie name used to specify the name of the cookie that stores the token (e.g., `cookieName=Test`).
      *
      * @returns {PiEmbedActions}
      *
